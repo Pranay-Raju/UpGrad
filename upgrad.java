@@ -51,7 +51,7 @@ class Student implements Comparable<Student>{
 		return this.cgpa;
 	}
 	public int compareTo(Student student){
-		int compareResult = (this.cgpa).compareTo(student.getCGPA());
+		int compareResult = (this.cgpa).compareTo(student.getCGPA()) * -1;
 		if(compareResult == 0){
 			compareResult = (this.name).compareTo(student.getName());
 		}
