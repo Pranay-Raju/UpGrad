@@ -7,7 +7,7 @@ class Main{
 		List<Student> list = new ArrayList<Student>();
 		Comparator<Student> comparator = new Comparator<Student>(){
 			public int compare(Student student1,Student student2){
-				return student2.compareTo(student1);
+				return student1.compareTo(student2);
 			}
 		};
 		for(int i=1;i<=entries;i++){
@@ -22,6 +22,9 @@ class Main{
 				list.add(new Student(name,cgpa,token));
 				list.sort(comparator);
 			}
+		}
+		for(Student student : list){
+			out.println(student.getName());
 		}
 	}
 }
