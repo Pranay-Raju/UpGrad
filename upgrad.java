@@ -19,6 +19,11 @@ class Main{
 				String name = sc.next();
 				float cgpa = sc.nextFloat();
 				int token = sc.nextInt();
+				if(!isTokenValid(list,token)){
+					out.println("Token Invalid,Please re-enter query with a valid token");
+					i--;
+					continue;
+				}
 				list.add(new Student(name,cgpa,token));
 				list.sort(comparator);
 			}
@@ -26,6 +31,12 @@ class Main{
 		for(Student student : list){
 			out.println(student.getName());
 		}
+	}
+	static public boolean isTokenValid(List<Student> list,int token){
+		for(Student student : list){
+			if(student.getToken() == token)return false;
+		}
+		return true;
 	}
 }
 class Student implements Comparable<Student>{
